@@ -5,7 +5,7 @@ from twisted.internet.error import DNSLookupError
 from twisted.internet.error import TimeoutError, TCPTimedOutError
 
 class ErrbackSpider(scrapy.Spider):
-    name = "errback_example"
+    name = "errback_demo"
     start_urls = [
         "http://www.httpbin.org/",              # HTTP 200 expected
         "http://www.httpbin.org/status/404",    # Not found error
