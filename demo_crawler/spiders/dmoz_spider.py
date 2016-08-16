@@ -1,6 +1,7 @@
 import scrapy
 
 from demo_crawler.items import DmozItem
+#from scrapy.shell import inspect_response
 
 class DmozSpider(scrapy.Spider):
     name = "dmoz"
