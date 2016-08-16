@@ -11,3 +11,8 @@ class DmozItem(scrapy.Item):
     title = scrapy.Field()
     link = scrapy.Field()
     desc = scrapy.Field()
+
+class DirectoryItem(scrapy.Item):
+    name = scrapy.Field()
+    url = scrapy.Field()
+    description = scrapy.Field()

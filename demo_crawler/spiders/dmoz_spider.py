@@ -5,6 +5,7 @@ from demo_crawler.items import DmozItem
 class DmozSpider(scrapy.Spider):
     name = "dmoz"
     allowed_domains = ["dmoz.org"]
+    download_delay = 2
     start_urls = [
         "http://www.dmoz.org/Computers/Programming/Languages/Python/",
     ]
@@ -15,6 +16,7 @@ class DmozSpider(scrapy.Spider):
             yield scrapy.Request(url, callback=self.parse_dir_contents)
 
     def parse_dir_contents(self, response):
+        # inspect_response(response, self)
         for sel in response.xpath('//div[@class="title-and-desc"]'):
             item = DmozItem()
             item['title'] = sel.xpath('a/div/text()').extract()
